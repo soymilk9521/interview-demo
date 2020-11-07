@@ -10,7 +10,7 @@ package com.lr.singleton;
  */
 public class SingletonDemo {
 
-    private static SingletonDemo instance;
+    private static volatile SingletonDemo instance;
 
     private  SingletonDemo() {
         System.out.println(Thread.currentThread().getName() + "\t 我是构造方法 SingletonDemo()");
@@ -21,7 +21,7 @@ public class SingletonDemo {
         if (instance == null) {
             synchronized (SingletonDemo.class){
                 if (instance == null) {
-                    instance = new SingletonDemo(); 
+                    instance = new SingletonDemo();
                 }
             }
         }
