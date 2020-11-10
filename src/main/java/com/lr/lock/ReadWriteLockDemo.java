@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  *
  * @author LR
  * @since 2020-11-09 21:10
- * 写操作独占，不可分割，读操作共享，可以分割
+ * 写操作：原子 + 独占，整个过程时一个完整的统一体，不可被分割被打断；读操作共享，可以分割
  */
 public class ReadWriteLockDemo {
     public static void main(String[] args) {
