@@ -48,7 +48,7 @@ public class ProdConsumerBlockingQueueDemo {
     }
 }
 
-class MyResource {
+class  MyResource {
     private BlockingQueue<String> blockingQueue;
     private volatile boolean flag = true;
     private AtomicInteger atomicInteger = new AtomicInteger();
