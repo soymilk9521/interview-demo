@@ -25,6 +25,9 @@ public class SpinLock {
             lock.lock();
             lock.unLock();
         }, "t2").start();
+        Integer a = 1000;
+        Integer b = 1000;
+        System.out.println( a.compareTo(b) == 0);
     }
 
 }
