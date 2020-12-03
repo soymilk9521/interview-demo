@@ -1,5 +1,7 @@
 package com.lr.thread;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -27,8 +29,12 @@ public class MyThreadPoolDemo {
                  new ThreadPoolExecutor.DiscardPolicy()); // 8和9任务直接被抛弃
         try {
             for (int i = 0; i < 10; i++) {
-                final int tempInt = i;
+                final int tempInt = i; // lambda表达式使用外部定义的基本数据类型时需要加final关键字
+                Integer t = 2;
+                List list = new ArrayList(); // lambda表达式使用外部定义的引用数据类型可以不加final关键字
                 threadPool.execute(() -> {
+                    System.out.println(list.size());
+                    System.out.println(t);
                     System.out.println(Thread.currentThread().getName() + "\t 办理业务 ----> " + tempInt);
                 });
             }
