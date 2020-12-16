@@ -18,21 +18,26 @@ public class SingletonMulThreadTest {
         Callable callable = () -> {
             System.out.println("callable ---> " + Thread.currentThread().getName());
 //            return Singleton4.getInstance();
-            return Singleton5.getInstance();
+//            return Singleton5.getInstance();
+            return Singleton6.getInstance();
         };
         // 创建线程池
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         // 提交线程池任务
 //        Future<Singleton4> f1 = executorService.submit(callable);
 //        Future<Singleton4> f2 = executorService.submit(callable);
-        Future<Singleton5> f1 = executorService.submit(callable);
-        Future<Singleton5> f2 = executorService.submit(callable);
+//        Future<Singleton5> f1 = executorService.submit(callable);
+//        Future<Singleton5> f2 = executorService.submit(callable);
+        Future<Singleton6> f1 = executorService.submit(callable);
+        Future<Singleton6> f2 = executorService.submit(callable);
         try {
             // 获取线程操作资源
 //            Singleton4 s3 = f1.get();
 //            Singleton4 s4 = f2.get();
-            Singleton5 s3 = f1.get();
-            Singleton5 s4 = f2.get();
+//            Singleton5 s3 = f1.get();
+//            Singleton5 s4 = f2.get();
+            Singleton6 s3 = f1.get();
+            Singleton6 s4 = f2.get();
             System.out.println("多线程环境：" + (s3 == s4)); // false
         } catch (InterruptedException e) {
             e.printStackTrace();

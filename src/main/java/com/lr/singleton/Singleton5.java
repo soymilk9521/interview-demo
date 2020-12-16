@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author LR
  * @since 2020-12-16 9:27
- * 懒汉模式二： 线程安全
+ * 懒汉模式二： 线程安全（双端检锁机制）
  *
  */
 public class Singleton5 {

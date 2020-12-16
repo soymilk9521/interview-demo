@@ -14,14 +14,22 @@ import java.util.Properties;
  * @since 2020-12-15 8:30
  *
  *  1. ClassName.class.getClassLoader().getResource("").getPath()// 获取claspath路径
- *  2. Maven资源文件编译路径设置
+ *  2. Maven配置资源文件编译路径（pom.xml文件）
  *  3. 静态代码块随着类的加载而加载
  *  4. Properties加载属性文件
  *
  */
 public class Singleton3 {
     private String info;
+    // 静态变量保存实例
+    // 向外公开实例
     public static final Singleton3 INSTANCE;
+
+    private Singleton3(String info) {
+        this.info = info;
+        System.out.println("单例模式，构造函数只执行一次");
+    }
+
     static {
         System.out.println("静态代码块，加载属性文件");
         Properties properties = new Properties();
@@ -46,21 +54,9 @@ public class Singleton3 {
         }
     }
 
-    private Singleton3(String info) {
-        this.info = info;
-        System.out.println("单例模式，构造函数只执行一次");
-    }
-
     public static void main(String[] args) {
         Singleton3 s1 = Singleton3.INSTANCE;
         Singleton3 s2 = Singleton3.INSTANCE;
         System.out.println(s1 == s2);
-    }
-
-    @Override
-    public String toString() {
-        return "Singleton3{" +
-                "info='" + info + '\'' +
-                '}';
     }
 }

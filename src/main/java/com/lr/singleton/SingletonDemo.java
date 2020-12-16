@@ -41,11 +41,18 @@ public class SingletonDemo {
 
 
         // 多线程操作单例模式：存在问题
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             new Thread(()->{
                 SingletonDemo.getInstance(); // 多线程环境下构造方法执行多次
             }, String.valueOf(i)).start();
         }
+
+        System.out.println("=============================");
+
+        Singleton6 s1 = Singleton6.getInstance();
+        Singleton6 s2 = Singleton6.getInstance();
+        System.out.println(s1 == s2);
+
     }
 
 
