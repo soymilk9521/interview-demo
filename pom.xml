@@ -28,14 +28,14 @@
     <build>
         <resources>
             <resource>
-                <directory>src/main/java</directory>
+                <directory>src/main/java</directory> <!-- 加载类路径下属性资源文件-->
                 <includes>
                     <include>**/*.properties</include>
                     <include>**/*.xml</include>
                 </includes>
             </resource>
             <resource>
-                <directory>src/main/resources</directory>
+                <directory>src/main/resources</directory><!-- 加载resources路径下属性资源文件-->
             </resource>
         </resources>
     </build>
