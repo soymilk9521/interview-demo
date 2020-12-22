@@ -39,7 +39,7 @@ public class TestTransferValues {
         String d = "hello";
         String c = b + 2;
         String e = d + 2;
-        System.out.println((a == c));
-        System.out.println((a == e));
+        System.out.println((a == c)); // true
+        System.out.println((a == e)); // false
     }
 }
